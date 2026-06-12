@@ -1,0 +1,135 @@
+spec: FinOps Framework 1.0
+provider: Rev AI
+providerId: rev-ai
+created: 2026-06-12
+modified: 2026-06-12
+focusVersion: "1.0"
+url: https://www.rev.ai/pricing
+
+billingModel: metered
+billingCycle: monthly
+currency: USD
+minimumCharge: 0.00
+roundingPolicy: "Rounded up to nearest second; 15-second minimum per job"
+
+focusColumns:
+  - ChargePeriodStart
+  - ChargePeriodEnd
+  - ServiceName
+  - ServiceCategory
+  - ChargeType
+  - BilledCost
+  - BilledQuantity
+  - BilledUnit
+  - ResourceId
+
+meters:
+  - name: Reverb ASR Transcription (English)
+    unit: hours
+    rate: 0.20
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Asynchronous Speech-to-Text
+
+  - name: Reverb Turbo Transcription (English)
+    unit: hours
+    rate: 0.10
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Asynchronous Speech-to-Text
+
+  - name: Reverb Foreign Language Transcription
+    unit: hours
+    rate: 0.30
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Asynchronous Speech-to-Text
+
+  - name: Whisper Fusion Transcription
+    unit: minutes
+    rate: 0.005
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Asynchronous Speech-to-Text
+
+  - name: Whisper Large Transcription
+    unit: minutes
+    rate: 0.005
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Asynchronous Speech-to-Text
+
+  - name: Forced Alignment
+    unit: minutes
+    rate: 0.003
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Forced Alignment API
+
+  - name: Language Identification
+    unit: minutes
+    rate: 0.003
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Language Identification API
+
+  - name: Language Translation (Standard)
+    unit: minutes
+    rate: 0.002
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Language Translation
+
+  - name: Language Translation (Premium)
+    unit: minutes
+    rate: 0.025
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Language Translation
+
+  - name: Sentiment Analysis
+    unit: per 10 words
+    rate: 0.0008
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Sentiment Analysis API
+
+  - name: Topic Extraction
+    unit: per 10 words
+    rate: 0.0008
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Topic Extraction API
+
+  - name: Summarization (Standard)
+    unit: minutes
+    rate: 0.002
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Summarization
+
+  - name: Summarization (Premium)
+    unit: minutes
+    rate: 0.025
+    currency: USD
+    serviceCategory: AI and Machine Learning
+    serviceName: Rev AI Summarization
+
+  - name: Human Transcription
+    unit: minutes
+    rate: 1.99
+    currency: USD
+    serviceCategory: Professional Services
+    serviceName: Rev Human Transcription
+
+principles:
+  - name: Understand Usage
+    description: Monitor audio duration submitted per service type to forecast monthly spend. Use the jobs API to retrieve status and duration metadata for each completed transcription job.
+  - name: Optimize Usage
+    description: Use Reverb Turbo ($0.10/hr) instead of standard Reverb ($0.20/hr) where maximum accuracy is not required. Batch short audio clips to minimize the 15-second minimum charge impact.
+  - name: Allocate Costs
+    description: Tag transcription jobs with metadata (e.g., department, project, or customer ID) using the metadata field in job submissions to enable cost allocation reporting.
+  - name: Forecast Spend
+    description: Estimate monthly spend by multiplying expected audio hours/minutes by the applicable per-unit rate for each service. Account for the rounding policy (nearest second, 15-second minimum).
+  - name: Free Tier Optimization
+    description: New accounts receive 5 hours of free Reverb ASR credits applicable across all products. Prioritize testing and evaluation workloads within the free tier before incurring metered charges.

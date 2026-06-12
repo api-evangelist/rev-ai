@@ -1,0 +1,79 @@
+spec: API Commons Rate Limits 0.1
+provider: Rev AI
+providerId: rev-ai
+created: 2026-06-12
+modified: 2026-06-12
+url: https://docs.rev.ai/faq
+
+retryAfter: true
+throttledStatusCode: 429
+
+limits:
+  - name: Asynchronous API Submission Rate
+    description: Maximum number of transcription requests submitted via the asynchronous jobs endpoint per 10-minute window.
+    scope: per account
+    endpoint: POST /speechtotext/v1/jobs
+    limit: 10000
+    unit: requests
+    period: 10 minutes
+
+  - name: Asynchronous API Processing Rate
+    description: Maximum number of transcriptions actively processed per 10-minute window. Excess submissions are queued and processed as capacity becomes available.
+    scope: per account
+    limit: 500
+    unit: transcriptions processed
+    period: 10 minutes
+
+  - name: Multipart Upload File Size
+    description: Maximum file size for multipart/form-data uploads to the jobs endpoint.
+    scope: per request
+    endpoint: POST /speechtotext/v1/jobs (multipart)
+    limit: 2
+    unit: GB
+
+  - name: Source URL File Size
+    description: Maximum file size when submitting a job via source_config URL reference.
+    scope: per request
+    limit: 5
+    unit: TB
+
+  - name: Maximum Audio Duration
+    description: Maximum duration of a single audio file submitted for transcription. Files longer than this should be split into chunks.
+    scope: per job
+    limit: 17
+    unit: hours
+
+  - name: Multipart Upload Concurrency
+    description: Maximum number of simultaneous file upload requests to the jobs endpoint.
+    scope: per account
+    endpoint: POST /speechtotext/v1/jobs (multipart)
+    limit: 5
+    unit: concurrent requests
+    errorCode: 4029
+
+  - name: Streaming Concurrency
+    description: Maximum number of concurrent WebSocket streaming connections. Returns error 4029 when limit is reached; no queuing occurs. Limit is configurable by contacting Rev AI support.
+    scope: per account
+    endpoint: wss://api.rev.ai/speechtotext/v1/stream
+    limit: 10
+    unit: concurrent streams
+    errorCode: 4029
+    configurable: true
+
+  - name: Streaming Session Duration
+    description: Maximum duration of a single WebSocket streaming session. New connections should be initialized before this limit is reached to ensure continuity.
+    scope: per stream
+    limit: 3
+    unit: hours
+
+  - name: Access Tokens
+    description: Maximum number of active API access tokens per account.
+    scope: per account
+    limit: 2
+    unit: tokens
+
+  - name: Job Retention
+    description: Transcription jobs and their results are retained on Rev AI servers for up to 30 days after completion.
+    scope: per job
+    limit: 30
+    unit: days

@@ -1,0 +1,99 @@
+spec: API Commons Plans 0.1
+provider: Rev AI
+providerId: rev-ai
+created: 2026-06-12
+modified: 2026-06-12
+reconciled: true
+type: freemium
+url: https://www.rev.ai/pricing
+
+plans:
+  - name: Free Tier
+    type: free
+    description: New accounts receive free credits equivalent to 5 hours of Reverb ASR. Credits can be used across all Rev AI products.
+    quota:
+      - metric: transcription_credits
+        limit: 5
+        unit: hours
+        period: one-time
+    features:
+      - Reverb ASR transcription
+      - All API products eligible for free credits
+      - Streaming and asynchronous APIs
+
+  - name: Pay-As-You-Go
+    type: metered
+    description: Usage-based pricing with no monthly commitment. Billed per minute or per hour depending on service. All durations rounded up to the nearest second with a 15-second minimum.
+    pricing:
+      - service: Reverb Transcription (English)
+        rate: 0.20
+        unit: per hour
+        currency: USD
+      - service: Reverb Turbo (English)
+        rate: 0.10
+        unit: per hour
+        currency: USD
+      - service: Reverb Foreign Language (55+ languages)
+        rate: 0.30
+        unit: per hour
+        currency: USD
+      - service: Whisper Fusion (English)
+        rate: 0.005
+        unit: per minute
+        currency: USD
+      - service: Whisper Large (English)
+        rate: 0.005
+        unit: per minute
+        currency: USD
+      - service: Human Transcription
+        rate: 1.99
+        unit: per minute
+        currency: USD
+      - service: Forced Alignment
+        rate: 0.003
+        unit: per minute
+        currency: USD
+      - service: Language Identification
+        rate: 0.003
+        unit: per minute
+        currency: USD
+      - service: Language Translation (standard)
+        rate: 0.002
+        unit: per minute
+        currency: USD
+      - service: Language Translation (premium)
+        rate: 0.025
+        unit: per minute
+        currency: USD
+      - service: Sentiment Analysis
+        rate: 0.0008
+        unit: per 10 words
+        currency: USD
+      - service: Summarization (standard)
+        rate: 0.002
+        unit: per minute
+        currency: USD
+      - service: Summarization (premium)
+        rate: 0.025
+        unit: per minute
+        currency: USD
+      - service: Topic Extraction
+        rate: 0.0008
+        unit: per 10 words
+        currency: USD
+    features:
+      - All API products
+      - Bearer token authentication
+      - Up to 2 active access tokens
+      - Python, Node.js, and Java SDKs
+
+  - name: Enterprise
+    type: enterprise
+    description: Volume-based pricing with flexible terms for high-usage customers. Includes a dedicated account manager, priority support, and additional evaluation credits.
+    features:
+      - Volume discounts
+      - Dedicated account manager
+      - Priority support
+      - Additional evaluation credits
+      - Flexible contract terms
+      - Custom concurrency limits (configurable by Rev AI support)
