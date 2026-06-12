@@ -1,0 +1,249 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "rev-ai": "https://www.rev.ai/",
+    "docs": "https://docs.rev.ai/",
+    "api": "https://api.rev.ai/",
+    "SpeechRecognitionService": {
+      "@id": "rev-ai:SpeechRecognitionService",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "Service"
+    },
+    "TranscriptionJob": {
+      "@id": "rev-ai:TranscriptionJob",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "Action"
+    },
+    "StreamingSession": {
+      "@id": "rev-ai:StreamingSession",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "Action"
+    },
+    "TopicExtractionJob": {
+      "@id": "rev-ai:TopicExtractionJob",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "Action"
+    },
+    "SentimentAnalysisJob": {
+      "@id": "rev-ai:SentimentAnalysisJob",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "Action"
+    },
+    "LanguageIdentificationJob": {
+      "@id": "rev-ai:LanguageIdentificationJob",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "Action"
+    },
+    "ForcedAlignmentJob": {
+      "@id": "rev-ai:ForcedAlignmentJob",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "Action"
+    },
+    "CustomVocabulary": {
+      "@id": "rev-ai:CustomVocabulary",
+      "@type": "rdfs:Class",
+      "rdfs:subClassOf": "StructuredValue"
+    },
+    "jobId": {
+      "@id": "rev-ai:jobId",
+      "@type": "@id"
+    },
+    "jobStatus": {
+      "@id": "rev-ai:jobStatus"
+    },
+    "mediaUrl": {
+      "@id": "rev-ai:mediaUrl",
+      "@type": "@id"
+    },
+    "transcript": {
+      "@id": "rev-ai:transcript"
+    },
+    "monologues": {
+      "@id": "rev-ai:monologues",
+      "@container": "@list"
+    },
+    "elements": {
+      "@id": "rev-ai:elements",
+      "@container": "@list"
+    },
+    "speaker": {
+      "@id": "rev-ai:speaker"
+    },
+    "value": {
+      "@id": "rev-ai:value"
+    },
+    "ts": {
+      "@id": "rev-ai:ts"
+    },
+    "endTs": {
+      "@id": "rev-ai:endTs"
+    },
+    "confidence": {
+      "@id": "rev-ai:confidence"
+    },
+    "languageCode": {
+      "@id": "rev-ai:languageCode"
+    },
+    "topics": {
+      "@id": "rev-ai:topics",
+      "@container": "@list"
+    },
+    "sentiments": {
+      "@id": "rev-ai:sentiments",
+      "@container": "@list"
+    },
+    "sentiment": {
+      "@id": "rev-ai:sentiment"
+    },
+    "score": {
+      "@id": "rev-ai:score"
+    },
+    "phrases": {
+      "@id": "rev-ai:phrases",
+      "@container": "@list"
+    },
+    "soundsLike": {
+      "@id": "rev-ai:soundsLike",
+      "@container": "@list"
+    },
+    "customVocabularyId": {
+      "@id": "rev-ai:customVocabularyId",
+      "@type": "@id"
+    },
+    "skipDiarization": {
+      "@id": "rev-ai:skipDiarization",
+      "@type": "xsd:boolean"
+    },
+    "skipPunctuation": {
+      "@id": "rev-ai:skipPunctuation",
+      "@type": "xsd:boolean"
+    },
+    "removeDisfluencies": {
+      "@id": "rev-ai:removeDisfluencies",
+      "@type": "xsd:boolean"
+    },
+    "filterProfanity": {
+      "@id": "rev-ai:filterProfanity",
+      "@type": "xsd:boolean"
+    },
+    "speakerChannelsCount": {
+      "@id": "rev-ai:speakerChannelsCount",
+      "@type": "xsd:integer"
+    },
+    "transcriber": {
+      "@id": "rev-ai:transcriber"
+    },
+    "reverbTurbo": {
+      "@id": "rev-ai:reverbTurbo"
+    },
+    "reverbBase": {
+      "@id": "rev-ai:reverbBase"
+    },
+    "humanTranscriber": {
+      "@id": "rev-ai:humanTranscriber"
+    }
+  },
+  "@graph": [
+    {
+      "@type": "WebAPI",
+      "name": "Rev AI API",
+      "description": "Speech recognition and transcription API platform from Rev.com offering AI-powered speech-to-text for pre-recorded audio and real-time streaming.",
+      "url": "https://www.rev.ai/",
+      "documentation": "https://docs.rev.ai/",
+      "provider": {
+        "@type": "Organization",
+        "name": "Rev.com",
+        "url": "https://www.rev.com/",
+        "sameAs": [
+          "https://github.com/revdotcom",
+          "https://www.linkedin.com/company/rev-com"
+        ]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Rev AI API Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Reverb Turbo Transcription",
+            "description": "Fastest AI transcription model",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "0.10",
+              "priceCurrency": "USD",
+              "unitText": "per hour of audio"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Sentiment Analysis",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "0.0008",
+              "priceCurrency": "USD",
+              "unitText": "per 10 words"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Language Identification",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "0.003",
+              "priceCurrency": "USD",
+              "unitText": "per minute"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Forced Alignment",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "0.003",
+              "priceCurrency": "USD",
+              "unitText": "per minute"
+            }
+          }
+        ]
+      },
+      "termsOfService": "https://www.rev.ai/legal/terms",
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "name": "Asynchronous Speech-to-Text",
+          "serviceUrl": "https://api.rev.ai/speechtotext/v1"
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Streaming Speech-to-Text",
+          "serviceUrl": "wss://api.rev.ai/speechtotext/v1/stream"
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Topic Extraction",
+          "serviceUrl": "https://api.rev.ai/topic_extraction/v1"
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Sentiment Analysis",
+          "serviceUrl": "https://api.rev.ai/sentiment_analysis/v1"
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Language Identification",
+          "serviceUrl": "https://api.rev.ai/languageid/v1"
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Forced Alignment",
+          "serviceUrl": "https://api.rev.ai/alignment/v1"
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Custom Vocabulary",
+          "serviceUrl": "https://api.rev.ai/speechtotext/v1/vocabularies"
+        }
+      ]
+    }
+  ]
+}

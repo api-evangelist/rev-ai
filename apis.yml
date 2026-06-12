@@ -136,6 +136,10 @@ common:
     url: rate-limits/rev-ai-rate-limits.yml
   - type: FinOps
     url: finops/rev-ai-finops.yml
+  - type: BlogFeeds
+    url: blogs/blogs.json
+  - type: JSONLDContext
+    url: json-ld/rev-ai-context.jsonld
 
 maintainers:
   - FN: Kin Lane

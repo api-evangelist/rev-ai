@@ -1,0 +1,12 @@
+{
+  "blogFeeds": [
+    {
+      "name": "Rev Blog",
+      "url": "https://www.rev.com/blog",
+      "rssUrl": "https://www.rev.com/blog/rss.xml",
+      "type": "RSS",
+      "confirmed": true,
+      "lastChecked": "2026-06-12"
+    }
+  ]
+}
