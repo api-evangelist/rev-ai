@@ -6,16 +6,19 @@
       "rssUrl": "https://www.rev.com/blog/rss.xml",
       "type": "RSS",
       "confirmed": true,
-      "lastChecked": "2026-06-12"
+      "lastChecked": "2026-06-21"
     }
   ],
   "repo": "rev-ai",
   "feeds": [
     {
-      "source": "https://www.linkedin.com/company/rev-com",
-      "error": "HTTPError"
+      "source": "https://www.rev.com/blog",
+      "feed_url": "",
+      "saved": 1,
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "post_count": 4,
+  "fetched": "2026-06-27T13:06:42Z",
+  "agent_pulled": "2026-06-27"
 }
