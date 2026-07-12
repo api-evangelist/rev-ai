@@ -116,6 +116,10 @@ apis:
         url: https://docs.rev.ai/api/custom-vocabulary
 
 common:
+  - type: TrustCenter
+    url: security/rev-ai-trust-center.yml
+  - type: DomainSecurity
+    url: security/rev-ai-domain-security.yml
   - type: Website
     url: https://www.rev.ai/
   - type: Documentation

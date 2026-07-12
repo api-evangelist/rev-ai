@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://www.rev.ai/security
+url: https://www.rev.ai/security
+certifications:
+- SOC 2
+- HIPAA
+- GDPR
+evidence:
+- source: https://www.rev.ai/security
+  keywords:
+  - soc 2
+  - hipaa
+  - gdpr
