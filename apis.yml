@@ -49,6 +49,7 @@ tags:
   - Sentiment Analysis
   - Topic Extraction
   - Language Identification
+  - Voice
 apis:
   - name: Rev AI Asynchronous Speech-to-Text API
     description: Batch transcription API for pre-recorded audio files supporting uploads up to 2 GB (multipart) or 5 TB (source URL), with results typically available within 15 minutes.
