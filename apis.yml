@@ -84,6 +84,10 @@ apis:
     baseURL: https://api.rev.ai/topic_extraction/v1
     tags:
       - Topic Extraction
+      - Natural Language Processing
+      - Analytics
+    tags_raw:
+      - Topic Extraction
       - NLP
       - Analytics
     properties:
@@ -97,6 +101,10 @@ apis:
     baseURL: https://api.rev.ai/sentiment_analysis/v1
     tags:
       - Sentiment Analysis
+      - Natural Language Processing
+      - Analytics
+    tags_raw:
+      - Sentiment Analysis
       - NLP
       - Analytics
     properties:
@@ -109,6 +117,9 @@ apis:
     humanURL: https://docs.rev.ai/api/language-identification
     baseURL: https://api.rev.ai/languageid/v1
     tags:
+      - Language Identification
+      - Natural Language Processing
+    tags_raw:
       - Language Identification
       - NLP
     properties:
