@@ -20,14 +20,11 @@
     },
     {
       "source": "https://www.linkedin.com/company/rev-com",
-      "feed_url": "https://www.linkedin.com/company/rev-com",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "error": "HTTPError"
     }
   ],
   "post_count": 7,
-  "fetched": "2026-10-10T13:15:00Z",
+  "fetched": "2026-10-17T14:53:57Z",
   "agent_pulled": "2026-07-04",
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
